@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact Viewer</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
+
+  <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+
+  <script src="js/app.js"></script>
+
+  <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+</head>
+<body>
+
+<div id="home" data-role="page">
+
+  <div data-role="header">
+    <h1>Contact Viewer</h1>
+  </div>
+
+  <div role="main" class="ui-content">
+    <ul id="contact_list" data-role="listview"></ul>
+  </div>
+
+</div>
+
+<div id="show" data-role="page">
+
+  <div data-role="header">
+    <a href="#home" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-carat-l">Contacts</a>
+    <h1>Details</h1>
+    <a href="#edit" id="edit_home" class="ui-btn-right ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-right ui-icon-edit">Edit</a>
+  </div>
+
+  <div role="main" class="ui-content">
+    <div class="ui-field-contain">
+      <label>Title:</label>
+      <span id="show_title"></span>
+    </div>
+
+    <div class="ui-field-contain">
+      <label>Name:</label>
+      <span id="show_name"></span>
+    </div>
+
+    <div class="ui-field-contain">
+      <label>Phone:</label>
+      <span id="show_phone"></span>
+    </div>
+
+    <div class="ui-field-contain">
+      <label>Email:</label>
+      <span id="show_email"></span>
+    </div>
+
+    <div class="ui-field-contain">
+      <label>Twitter:</label>
+      <span id="show_twitter"></span>
+    </div>
+  </div>
+
+</div>
+
+<div id="edit" data-role="page">
+
+  <form id="edit_form">
+
+    <div data-role="header">
+      <a href="#show" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-carat-l">Details</a>
+      <h1>Edit</h1>
+      <button type="submit" class="ui-btn-right ui-btn ui-btn-b ui-btn-inline ui-mini ui-corner-all ui-btn-icon-right ui-icon-check">Save</button>
+    </div>
+
+    <div role="main" class="ui-content">
+      <div class="ui-field-contain">
+        <label>Title:</label>
+        <select name="edit_title" id="edit_title">
+          <option value="Mr">Mr</option>
+          <option value="Mrs">Mrs</option>
+          <option value="Ms">Ms</option>
+          <option value="Miss">Miss</option>
+          <option value="Captain">Captain</option>
+          <option value="First Mate">First Mate</option>
+          <option value="Pilot">Pilot</option>
+          <option value="Master">Master</option>
+          <option value="Muscle">Muscle</option>
+          <option value="Shepherd">Shepherd</option>
+          <option value="Dr">Dr</option>
+          <option value="Doctor's Sister">Doctor's Sister</option>
+        </select>
+      </div>
+
+      <div class="ui-field-contain">
+        <label>Name:</label>
+        <input type="text" name="edit_name" id="edit_name" />
+      </div>
+
+      <div class="ui-field-contain">
+        <label>Phone:</label>
+        <input type="text" name="edit_phone" id="edit_phone" />
+      </div>
+
+      <div class="ui-field-contain">
+        <label>Email:</label>
+        <input type="text" name="edit_email" id="edit_email" />
+      </div>
+
+      <div class="ui-field-contain">
+        <label>Twitter:</label>
+        <input type="text" name="edit_twitter" id="edit_twitter" />
+      </div>
+    </div>
+
+  </form>
+
+</div>
+
+</body>
+</html>
