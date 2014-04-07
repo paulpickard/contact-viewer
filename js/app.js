@@ -30,7 +30,7 @@
           title: contact.title,
           email: contact.email,
           phone: contact.phone,
-          twitterId: contact.twitter
+          twitterId: contact.twitterId
         },
         success: function(){
           callback();
@@ -71,7 +71,7 @@
     $( '#show_name' ).text( contact.name );
     $( '#show_phone' ).text( contact.phone );
     $( '#show_email' ).text( contact.email );
-    $( '#show_twitter' ).text( contact.twitter );
+    $( '#show_twitter' ).text( contact.twitterId );
   });
 
   $( document ).on( 'pagebeforeshow', '#edit', function(e, ui){
@@ -86,7 +86,7 @@
     $( '#edit_name' ).val( contact.name );
     $( '#edit_phone' ).val( contact.phone );
     $( '#edit_email' ).val( contact.email );
-    $( '#edit_twitter' ).val( contact.twitter );
+    $( '#edit_twitter' ).val( contact.twitterId );
   });
 
   $( document ).on( 'submit', '#edit_form', function(e){
@@ -96,7 +96,7 @@
     contact.name = $( '#edit_name' ).val();
     contact.phone = $( '#edit_phone' ).val();
     contact.email = $( '#edit_email' ).val();
-    contact.twitter = $( '#edit_twitter' ).val();
+    contact.twitterId = $( '#edit_twitter' ).val();
 
     saveContact(function(){
       $.mobile.navigate( '#home' );
