@@ -93,7 +93,7 @@
   
  var addTitle = $('#add_title').val();
   var addName =  $('#add_name').val();
-   var addphone = $('#add_phone').val();
+   var addPhone = $('#add_phone').val();
    var addEmail = $('#add_email').val();
    var addTwitter = $('#add_twitter').val();
 
@@ -110,12 +110,11 @@
           twitterId: addTwitter
         },
         success: function(){
-          callback();
+          $.mobile.navigate( '#home' );
         }
       });
  
   }
-  $.mobile.navigate( '#home' );
  
 })
 
