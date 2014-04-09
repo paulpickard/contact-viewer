@@ -41,6 +41,22 @@
 
   };
 
+  function deleteContact(callback){
+
+    if ( contact && contact._id ) {
+
+      $.ajax({
+        url: 'http://contacts.tinyapollo.com/contacts/' + contact._id + '?key=' + api_key,
+        method: 'DELETE',
+        success: function(){
+          callback();
+        }
+      });
+
+    }
+
+  };
+
   $( document ).on( 'pagebeforeshow', '#home', function(){
     getContacts(function(){
       var contact_list = $( '#contact_list' );
@@ -75,8 +91,6 @@
   });
 
   $( document ).on( 'pagebeforeshow', '#edit', function(e, ui){
-    console.log( contact );
-
     if ( !contact ) {
       $.mobile.navigate( '#home' );
       return;
@@ -87,6 +101,35 @@
     $( '#edit_phone' ).val( contact.phone );
     $( '#edit_email' ).val( contact.email );
     $( '#edit_twitter' ).val( contact.twitterId );
+  });
+
+  $( document ).on( 'submit', '#add_form', function(){
+
+    var addTitle = $('#add_title').val();
+    var addName =  $('#add_name').val();
+    var addPhone = $('#add_phone').val();
+    var addEmail = $('#add_email').val();
+    var addTwitter = $('#add_twitter').val();
+
+    if (addName != ''){
+
+      $.ajax({
+        url: 'http://contacts.tinyapollo.com/contacts/?key=' + api_key,
+        method: 'POST',
+        data: {
+          name: addName,
+          title: addTitle,
+          email: addEmail,
+          phone: addPhone,
+          twitterId: addTwitter
+        },
+        success: function(){
+          $.mobile.navigate( '#home' );
+        }
+      });
+
+    }
+
   });
 
   $( document ).on( 'submit', '#edit_form', function(e){
@@ -101,6 +144,14 @@
     saveContact(function(){
       $.mobile.navigate( '#home' );
     });
+  });
+
+  $( document ).on( 'click', '#delete_contact', function(){
+
+    deleteContact(function(){
+      $.mobile.navigate( '#home' );
+    });
+
   });
 
 })();
