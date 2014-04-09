@@ -88,6 +88,12 @@
     $( '#show_phone' ).text( contact.phone );
     $( '#show_email' ).text( contact.email );
     $( '#show_twitter' ).text( contact.twitterId );
+    
+    $('#action_button_list').empty();
+    $('#action_button_list').append('<a href=tel:' + contact.phone + '><img class="action_img" src="images/call.png"></a>');
+    $('#action_button_list').append('<a href=sms:' + contact.phone + '><img class="action_img" src="images/sms.png"></a>');
+    $('#action_button_list').append('<a href=mailto:' + contact.email + '><img class="action_img" src="images/sendemail.png"></a>');
+
   });
 
   $( document ).on( 'pagebeforeshow', '#edit', function(e, ui){
