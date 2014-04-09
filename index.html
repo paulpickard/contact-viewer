@@ -19,6 +19,7 @@
 
   <div data-role="header">
     <h1>Contact Viewer</h1>
+     <a href="#add" id="add_home" class="ui-btn-right ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-right ui-icon-add">Add</a>
   </div>
 
   <div role="main" class="ui-content">
@@ -61,7 +62,7 @@
       <span id="show_twitter"></span>
     </div>
   </div>
-
+ <a href="#delete" id="delete" data-role="button" href=""data-transition="slide">Delete</a>
 </div>
 
 <div id="edit" data-role="page">
@@ -116,6 +117,61 @@
 
   </form>
 
+</div>
+
+<div id="add" data-role="page">
+    
+    <form id="add_form">
+        
+        <div data-role="header">
+            <h1>Add</h1>
+           <button type="submit" class="ui-btn-right ui-btn ui-btn-b ui-btn-inline ui-mini ui-corner-all ui-btn-icon-right ui-icon-check">Save</button>
+		   <a href="#home" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-carat-l">Cancel</a>
+        
+        </div>
+        
+    
+        <div role="main" class="ui-content">
+            <div class="ui-field-contain">
+                <label>Title:</label>
+                <select name="add_title" id="add_title">
+                    <option value="Mr">Mr</option>
+                    <option value="Mrs">Mrs</option>
+                    <option value="Ms">Ms</option>
+                    <option value="Miss">Miss</option>
+                    <option value="Captain">Captain</option>
+                    <option value="First Mate">First Mate</option>
+                    <option value="Pilot">Pilot</option>
+                    <option value="Master">Master</option>
+                    <option value="Muscle">Muscle</option>
+                    <option value="Shepherd">Shepherd</option>
+                    <option value="Dr">Dr</option>
+                    <option value="Doctor's Sister">Doctor's Sister</option>
+                </select>
+            </div>
+            
+            
+            <div class="ui-field-contain">
+                <label>Name:</label>
+                <input type="text" name="add_name" id="add_name" />
+            </div>
+            
+            <div class="ui-field-contain">
+                <label>Phone:</label>
+                <input type="text" name="add_phone" id="add_phone" />
+            </div>
+            
+            <div class="ui-field-contain">
+                <label>Email:</label>
+                <input type="text" name="add_email" id="add_email" />
+            </div>
+            
+            <div class="ui-field-contain">
+                <label>Twitter:</label>
+                <input type="text" name="add_twitter" id="add_twitter" />
+            </div>
+            </div>
+            </form>
 </div>
 
 </body>

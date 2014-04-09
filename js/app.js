@@ -89,6 +89,35 @@
     $( '#edit_twitter' ).val( contact.twitterId );
   });
 
+   $( document ).on( 'submit', '#add_form', function(e){
+  
+ var addTitle = $('#add_title').val();
+  var addName =  $('#add_name').val();
+   var addPhone = $('#add_phone').val();
+   var addEmail = $('#add_email').val();
+   var addTwitter = $('#add_twitter').val();
+
+ if (addName != ''){
+ 
+  $.ajax({
+        url: 'http://contacts.tinyapollo.com/contacts/?key=' + api_key,
+        method: 'POST',
+        data: {
+		  name: addName,
+		  title: addTitle,
+          email: addEmail,
+          phone: addPhone,
+          twitterId: addTwitter
+        },
+        success: function(){
+          $.mobile.navigate( '#home' );
+        }
+      });
+ 
+  }
+ 
+})
+
   $( document ).on( 'submit', '#edit_form', function(e){
     e.preventDefault();
 
