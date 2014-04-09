@@ -1,0 +1,33 @@
+.actions
+{
+-webkit-column-count:3; /* Chrome, Safari, Opera */
+-moz-column-count:3; /* Firefox */
+column-count:3;
+column-gap:10px;
+}
+
+.details
+{
+-webkit-column-count:2; /* Chrome, Safari, Opera */
+-moz-column-count:2; /* Firefox */
+column-count:2;
+column-gap:10px;
+}
+
+.action_img
+{
+	width: 72px;
+	height: 72px;
+}
+
+.contact_icons
+{
+	width: 16px;
+	height: 16px;
+}
+
+.form_field
+{
+	display:inline-block;
+}
+
