@@ -109,6 +109,14 @@
     $( '#edit_twitter' ).val( contact.twitterId );
   });
 
+  $( document ).on( 'pagebeforeshow', '#add', function(e, ui){
+    $( '#add_title' ).val( '' );
+    $( '#add_name' ).val( '' );
+    $( '#add_phone' ).val( '' );
+    $( '#add_email' ).val( '' );
+    $( '#add_twitter' ).val( '' );
+  });
+
   $( document ).on( 'submit', '#add_form', function(){
 
     var addTitle = $('#add_title').val();
